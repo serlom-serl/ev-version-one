@@ -14,7 +14,7 @@ export default function EmptyState({
       </div>
 
       <p className="text-slate-500 text-lg font-medium">
-        No events found matching "{query}"
+        No events found matching &quot;{query}&quot;
       </p>
 
       <button

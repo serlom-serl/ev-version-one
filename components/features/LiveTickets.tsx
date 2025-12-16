@@ -34,10 +34,10 @@ export default function LiveTickets() {
     return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []);
 
-  // Reset page when search changes
-  useEffect(() => {
+  const handleSearchChange = (newQuery: string) => {
+    setSearchQuery(newQuery);
     setCurrentPage(1);
-  }, [searchQuery]);
+  };
 
   const filteredTickets = mockTicketingEvents.filter(
     (ticket) =>
@@ -90,7 +90,7 @@ export default function LiveTickets() {
 
           <div className="flex justify-center">
             <div className="w-full max-w-md text-slate-900">
-              <SearchBar value={searchQuery} onChange={setSearchQuery} />
+              <SearchBar value={searchQuery} onChange={handleSearchChange} />
             </div>
           </div>
         </div>

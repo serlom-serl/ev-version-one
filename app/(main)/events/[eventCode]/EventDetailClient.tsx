@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Event, Candidate, VotingEvent } from "@/types";
+import { VotingEvent } from "@/types";
 
 import {
   ArrowLeft,
@@ -193,7 +193,9 @@ export default function EventDetailClient({
             ].map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id as any)}
+                onClick={() =>
+                  setActiveTab(tab.id as "vote" | "overview" | "results")
+                }
                 className={`py-4 flex items-center gap-2 font-bold border-b-2 ${
                   activeTab === tab.id
                     ? "border-secondary-200 text-secondary-700"

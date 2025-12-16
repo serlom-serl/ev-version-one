@@ -295,8 +295,8 @@ export function NominationFormClient({ event }: NominationFormProps) {
                 {isSubmitting ? "Submitting..." : "Submit Nomination"}
               </button>
               <p className="text-center text-xs text-slate-400 mt-4">
-                By submitting, you agree to the event's nomination rules and
-                regulations.
+                By submitting, you agree to the event&apos;s nomination rules
+                and regulations.
               </p>
             </div>
           </form>

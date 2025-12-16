@@ -30,10 +30,15 @@ export default function LiveEvents() {
     return () => window.removeEventListener("resize", updateItemsPerPage);
   }, []);
 
-  // Reset page when filter/search changes
-  useEffect(() => {
+  const handleFilterChange = (newFilter: string) => {
+    setFilter(newFilter);
     setCurrentPage(1);
-  }, [filter, search]);
+  };
+
+  const handleSearchChange = (newSearch: string) => {
+    setSearch(newSearch);
+    setCurrentPage(1);
+  };
 
   const filters = ["All", "Awards", "Pageantry", "School"];
 
@@ -67,9 +72,9 @@ export default function LiveEvents() {
           <EventFilters
             filters={filters}
             active={filter}
-            onFilterChange={setFilter}
+            onFilterChange={handleFilterChange}
             search={search}
-            onSearchChange={setSearch}
+            onSearchChange={handleSearchChange}
           />
         </div>
 
@@ -79,6 +84,7 @@ export default function LiveEvents() {
           onClear={() => {
             setSearch("");
             setFilter("All");
+            setCurrentPage(1);
           }}
         />
 

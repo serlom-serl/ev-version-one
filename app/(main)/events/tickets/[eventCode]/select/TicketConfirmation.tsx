@@ -20,7 +20,7 @@ export const TicketConfirmation: React.FC<TicketConfirmationProps> = ({
           <CheckCircle size={40} className="text-white" />
         </div>
         <h1 className="text-3xl font-display font-bold text-white mb-2">
-          You're Going!
+          You&apos;re Going!
         </h1>
         <p className="text-slate-400">Transaction ID: {transactionId}</p>
       </div>

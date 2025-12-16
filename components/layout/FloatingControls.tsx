@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ArrowUp, MessageCircle } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 const FloatingControls: React.FC = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
